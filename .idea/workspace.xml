@@ -15,7 +15,7 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Startinis_Penketas" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -114,6 +114,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../receptusvetaine" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laboras\app\Http\Controllers" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -146,7 +151,7 @@
       <workItem from="1575963382105" duration="2439000" />
       <workItem from="1575982907204" duration="133000" />
       <workItem from="1575986545598" duration="163000" />
-      <workItem from="1576237649618" duration="3458000" />
+      <workItem from="1576237649618" duration="11110000" />
     </task>
     <servers />
   </component>
