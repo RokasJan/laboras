@@ -1,6 +1,6 @@
 @extends('layouts.app')
 {{--HTML::style('/css/login.css');--}}
-{{--<link href="{{ asset('/css/login.css') }}" rel="stylesheet">--}}
+<link href="{{ asset('/css/login.css') }}" rel="stylesheet">
 {{--@section('content')--}}
 <div class="container">
     <div class="row justify-content-center">

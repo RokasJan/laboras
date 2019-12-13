@@ -1,5 +1,5 @@
 <!doctype html>
-<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/login.css') }}" rel="stylesheet">
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
