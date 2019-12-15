@@ -1,7 +1,12 @@
-<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("/public/images/wallpaper.jpg"); --Image
+        }
+    </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Automasina</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -19,6 +24,7 @@
     </script>
 </head>
 <body>
+<img src="/public/favicon.ico">
 <div id="body">
     <div id="header">
         <h3 id="slogan">Automašina</h3>

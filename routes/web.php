@@ -17,6 +17,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/cars', 'CarsController@index');
 Route::get('/map', 'MapController@index');
 Route::get('/comments', 'CommentsController@index');
+Route::get('/addcomment', 'CommentsController@Komentaras')->name('comp');
+Route::post('/compatvirtinimas', 'CommentsController@pridejimas')->name('patv');
 Route::get('/contracts', 'ContractsController@index');
 Route::get('/customers', 'CustomersController@index');
 Route::get('/workers', 'WorkersController@index');
