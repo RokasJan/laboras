@@ -122,8 +122,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laboras\app" />
       <recent name="C:\xampp\htdocs\laboras\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\laboras\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -159,7 +159,7 @@
       <workItem from="1575982907204" duration="133000" />
       <workItem from="1575986545598" duration="163000" />
       <workItem from="1576237649618" duration="13672000" />
-      <workItem from="1576348174673" duration="14493000" />
+      <workItem from="1576348174673" duration="20705000" />
     </task>
     <servers />
   </component>
@@ -180,10 +180,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1576350666261">
+    <state x="717" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576371571000">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1576350666261" />
+    <state x="717" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1576371571000" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576366700106">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576366700106" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1576366588938">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1576366588938" />
     <state x="461" y="156" key="SettingsEditor" timestamp="1576351018107">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

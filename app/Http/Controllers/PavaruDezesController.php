@@ -6,11 +6,11 @@ use App\Cars;
 use App\Pavaru_dezes;
 use Illuminate\Http\Request;
 
-class CarsController extends Controller
+class PavaruDezesController extends Controller
 {
     public function index()
     {
-        $allCars = Cars::all();
+        $allCars = Pavaru_dezes::all();
         return view('cars', compact('allCars'));
     }
 }
