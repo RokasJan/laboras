@@ -30,13 +30,16 @@ class WorkersController extends Controller
             ->where('email', $request->input('pastas'))
             ->first();
 
-        
+        $darb = Darbuotojas::where('fk_Paskyraid_Paskyra', $vartotojas->id)->first();
+        if(empty($darb))
+        {
+            $naujas = darbuotojas::create([
+                'fk_Paskyraid_Paskyra'=> $vartotojas->id
+            ]);
 
-        $naujas = darbuotojas::create([
-           'fk_Paskyraid_Paskyra'=> $vartotojas->id
-        ]);
+            Klientas::where('fk_Paskyraid_Paskyra', $vartotojas->id)->delete();
+        }
 
-        Klientas::where('fk_Paskyraid_Paskyra', $vartotojas->id)->delete();
         return redirect('/workers');
 
 
