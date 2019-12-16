@@ -8,7 +8,7 @@
     </div>
     <div id="contentRight">
         @auth
-            <h2 class="align">Sudaryti sutartį</h2>
+            <h2 class="align">Pridėkite komentarą </h2>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -24,7 +24,7 @@
                 <div class="col-md-12 col-md-offset-3">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form class="form-horizontal" role="form" method="POST" action="{{ route('buypatv') }}">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ route('regpatv') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group">
                                     <label class="control-label">Pasirinkite automobolį</label>
@@ -37,10 +37,21 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-md-4 control-label">Data</label>
+                                    <div class="col-md-12">
+                                        <input id="party" type="date" name="data" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Vieta</label>
+                                    <div class="col-md-12">
+                                        <textarea type="text" class="form-control" name="vieta" value=""></textarea>
+                                    </div>
+                                <div class="form-group">
                                     <div class="col-md-12 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-refresh"></span>
-                                            Sudaryti
+                                            Pridėti
                                         </button>
                                     </div>
                                 </div>
