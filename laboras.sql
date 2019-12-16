@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2019 at 02:22 AM
+-- Generation Time: Dec 16, 2019 at 02:14 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -29,11 +29,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `atsiliepimas` (
+  `slapyvardis` varchar(100) NOT NULL,
   `komentarai` text NOT NULL,
-  `data` datetime NOT NULL,
+  `data` date NOT NULL,
   `id_Atsiliepimas` int(10) NOT NULL,
   `fk_Klientasid_Klientas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `atsiliepimas`
+--
+
+INSERT INTO `atsiliepimas` (`slapyvardis`, `komentarai`, `data`, `id_Atsiliepimas`, `fk_Klientasid_Klientas`) VALUES
+('TEST', 'TEST', '2019-11-12', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -42,9 +50,8 @@ CREATE TABLE `atsiliepimas` (
 --
 
 CREATE TABLE `automechanikas` (
-  `vardas` varchar(20) NOT NULL,
-  `pavarde` varchar(30) NOT NULL,
-  `id_Automechanikas` int(10) NOT NULL
+  `id_Automechanikas` int(10) NOT NULL,
+  `fk_Paskyraid_Paskyra` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -114,9 +121,8 @@ CREATE TABLE `darbo_grafikas` (
 --
 
 CREATE TABLE `darbuotojas` (
-  `vardas` varchar(20) NOT NULL,
-  `pavarde` varchar(30) NOT NULL,
-  `id_Darbuotojas` int(11) NOT NULL
+  `id_Darbuotojas` int(11) NOT NULL,
+  `fk_Paskyraid_Paskyra` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -166,12 +172,17 @@ INSERT INTO `kebulu_tipai` (`id_Kebulu_tipai`, `name`) VALUES
 --
 
 CREATE TABLE `klientas` (
-  `vardas` varchar(20) NOT NULL,
-  `pavarde` varchar(30) NOT NULL,
-  `gimimo_data` date NOT NULL,
-  `el_pastas` varchar(30) NOT NULL,
-  `id_Klientas` int(10) NOT NULL
+  `id_Klientas` int(10) NOT NULL,
+  `fk_Paskyraid_Paskyra` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `klientas`
+--
+
+INSERT INTO `klientas` (`id_Klientas`, `fk_Paskyraid_Paskyra`) VALUES
+(2, 1),
+(3, 2);
 
 -- --------------------------------------------------------
 
@@ -379,10 +390,8 @@ CREATE TABLE `uzsakymas` (
 --
 
 CREATE TABLE `vadovas` (
-  `vardas` varchar(20) NOT NULL,
-  `pavarde` varchar(30) NOT NULL,
-  `skyrius` varchar(20) NOT NULL,
-  `id_Vadovas` int(10) NOT NULL
+  `id_Vadovas` int(10) NOT NULL,
+  `fk_Paskyraid_Paskyra` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -392,15 +401,23 @@ CREATE TABLE `vadovas` (
 --
 
 CREATE TABLE `vartotojai` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `vardas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pravarde` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pavarde` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `vartotojai`
+--
+
+INSERT INTO `vartotojai` (`id`, `vardas`, `pavarde`, `password`, `email`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Rokas', '', '$2y$10$HepXQ0H09rIBB6h6q/o7uOkJyADN4LOkX.Fx0zdmOeXjTzJX4fKg2', 'rokas@rokas.lt', NULL, '2019-12-15 10:20:04', '2019-12-15 10:20:04'),
+(2, 'AHAHAH', 'AHHHHHHH', '$2y$10$tomXhK7oRrEoV25xuAc8KutqwQj2vji2G9Ho0eVwEhH8v77lTFx0S', 'AAAAA@AAAAA.lt', NULL, '2019-12-15 23:05:09', '2019-12-15 23:05:09');
 
 --
 -- Indexes for dumped tables
@@ -417,7 +434,8 @@ ALTER TABLE `atsiliepimas`
 -- Indexes for table `automechanikas`
 --
 ALTER TABLE `automechanikas`
-  ADD PRIMARY KEY (`id_Automechanikas`);
+  ADD PRIMARY KEY (`id_Automechanikas`),
+  ADD UNIQUE KEY `fk_Paskyraid_Paskyra` (`fk_Paskyraid_Paskyra`);
 
 --
 -- Indexes for table `automobilis`
@@ -448,7 +466,9 @@ ALTER TABLE `darbo_grafikas`
 -- Indexes for table `darbuotojas`
 --
 ALTER TABLE `darbuotojas`
-  ADD PRIMARY KEY (`id_Darbuotojas`);
+  ADD PRIMARY KEY (`id_Darbuotojas`),
+  ADD UNIQUE KEY `id_Darbuotojas` (`id_Darbuotojas`),
+  ADD KEY `DarbuotojasPaskyra` (`fk_Paskyraid_Paskyra`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -466,7 +486,8 @@ ALTER TABLE `kebulu_tipai`
 -- Indexes for table `klientas`
 --
 ALTER TABLE `klientas`
-  ADD PRIMARY KEY (`id_Klientas`);
+  ADD PRIMARY KEY (`id_Klientas`),
+  ADD UNIQUE KEY `fk_Paskyraid_Paskyra` (`fk_Paskyraid_Paskyra`);
 
 --
 -- Indexes for table `kuro_tipas`
@@ -563,13 +584,15 @@ ALTER TABLE `uzsakymas`
 -- Indexes for table `vadovas`
 --
 ALTER TABLE `vadovas`
-  ADD PRIMARY KEY (`id_Vadovas`);
+  ADD PRIMARY KEY (`id_Vadovas`),
+  ADD UNIQUE KEY `fk_Paskyraid_Paskyra` (`fk_Paskyraid_Paskyra`);
 
 --
 -- Indexes for table `vartotojai`
 --
 ALTER TABLE `vartotojai`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -579,7 +602,7 @@ ALTER TABLE `vartotojai`
 -- AUTO_INCREMENT for table `atsiliepimas`
 --
 ALTER TABLE `atsiliepimas`
-  MODIFY `id_Atsiliepimas` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_Atsiliepimas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `automechanikas`
@@ -621,7 +644,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `klientas`
 --
 ALTER TABLE `klientas`
-  MODIFY `id_Klientas` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_Klientas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -687,7 +710,7 @@ ALTER TABLE `vadovas`
 -- AUTO_INCREMENT for table `vartotojai`
 --
 ALTER TABLE `vartotojai`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -698,6 +721,12 @@ ALTER TABLE `vartotojai`
 --
 ALTER TABLE `atsiliepimas`
   ADD CONSTRAINT `mato` FOREIGN KEY (`fk_Klientasid_Klientas`) REFERENCES `klientas` (`id_Klientas`);
+
+--
+-- Constraints for table `automechanikas`
+--
+ALTER TABLE `automechanikas`
+  ADD CONSTRAINT `AutomechanikasPaskyra` FOREIGN KEY (`fk_Paskyraid_Paskyra`) REFERENCES `vartotojai` (`id`);
 
 --
 -- Constraints for table `automobilis`
@@ -720,6 +749,18 @@ ALTER TABLE `auto_dalis`
 ALTER TABLE `darbo_grafikas`
   ADD CONSTRAINT `sudaro` FOREIGN KEY (`fk_Vadovasid_Vadovas`) REFERENCES `vadovas` (`id_Vadovas`),
   ADD CONSTRAINT `turi` FOREIGN KEY (`fk_Darbuotojasid_Darbuotojas`) REFERENCES `darbuotojas` (`id_Darbuotojas`);
+
+--
+-- Constraints for table `darbuotojas`
+--
+ALTER TABLE `darbuotojas`
+  ADD CONSTRAINT `DarbuotojasPaskyra` FOREIGN KEY (`fk_Paskyraid_Paskyra`) REFERENCES `vartotojai` (`id`);
+
+--
+-- Constraints for table `klientas`
+--
+ALTER TABLE `klientas`
+  ADD CONSTRAINT `KlientasPaskyra` FOREIGN KEY (`fk_Paskyraid_Paskyra`) REFERENCES `vartotojai` (`id`);
 
 --
 -- Constraints for table `pakaitinis_automobilis`
@@ -773,6 +814,12 @@ ALTER TABLE `uzsakymas`
   ADD CONSTRAINT `pritaikomas3` FOREIGN KEY (`fk_Automobilisid_Automobilis`) REFERENCES `automobilis` (`id_Automobilis`),
   ADD CONSTRAINT `sukuria5` FOREIGN KEY (`fk_Klientasid_Klientas`) REFERENCES `klientas` (`id_Klientas`),
   ADD CONSTRAINT `turi7` FOREIGN KEY (`fk_Sutartisid_Sutartis`) REFERENCES `sutartis` (`id_Sutartis`);
+
+--
+-- Constraints for table `vadovas`
+--
+ALTER TABLE `vadovas`
+  ADD CONSTRAINT `VadovasPaskyra` FOREIGN KEY (`fk_Paskyraid_Paskyra`) REFERENCES `vartotojai` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
