@@ -117,10 +117,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../index.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laboras\app" />
       <recent name="C:\xampp\htdocs\laboras\app\Http\Controllers" />
     </key>
   </component>
@@ -147,7 +148,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576430823161</updated>
       <workItem from="1576430824666" duration="16583000" />
-      <workItem from="1576493284893" duration="4779000" />
+      <workItem from="1576493284893" duration="8703000" />
     </task>
     <servers />
   </component>
@@ -155,14 +156,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576453081374">
+    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576502914456">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576453081374" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1576419168156">
+    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576502914456" />
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1576503215933">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1576419168156" />
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1576503215933" />
     <state x="791" y="338" key="NewPhpClassDialog" timestamp="1576421201519">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
