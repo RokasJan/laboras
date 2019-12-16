@@ -10,13 +10,15 @@
     </div>
     <div id="contentRight">
         <h2 id="pageTitle">Darbuotojai</h2>
-        <a href="darbuotojai_reg.html"><button>Registruoti darbuotoją</button></a><br>
+        <br>
+        <a href="/workers/register"><button>Registruoti darbuotoją</button></a><br>
+        <br><br>
+        @foreach($darbuotojai as $darb)
         <div class="newsItem">
-            Nedas Nedaitis Nedas@email.com
+            {{$darb -> id_Darbuotojas}}
             <a href="darbuotojai_red.html"><button>Redaguoti</button></a>
         </div>
-        <div class="newsItem">
-            Rokas Rokaitis Rokas@email.com
-            <a href="darbuotojai_red.html"><button>Redaguoti</button></a>
-        </div>
+        <br>
+            @endforeach
+    </div>
 @endsection
