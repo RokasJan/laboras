@@ -13,7 +13,8 @@ class TestdriveController extends Controller
 {
     public function index()
     {
-        return view('testdrive');
+        $allTest = Rezervacija::all();
+        return view('testdrive',compact('allTest'));
     }
 
     public function registertest()
@@ -36,7 +37,7 @@ class TestdriveController extends Controller
             ]
         );
 
-        return redirect('/cars');
+        return redirect('/testdrive');
 
     }
 }

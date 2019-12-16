@@ -45,7 +45,7 @@
                 <br>
                 <a href="{{route('buy')}}"><button>Pirkti</button></a>
                 <a href="{{route('reg')}}"><button>Registruotis važiavimui</button></a>&nbsp;
-                <a href="komplektacija.html"><button>Komplektuotis automobilį</button></a>
+                <a href="{{route('komplekt')}}"><button>Komplektuotis automobilį</button></a>
             </div>
         </div>
 @endsection
