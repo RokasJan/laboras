@@ -11,7 +11,7 @@
     <div id="contentRight">
         <h2 id="pageTitle">Redaguoti darbuotoją</h2>
         <br>
-        <a href="/workers/atleisti"><button>Atleisti darbuotoją</button></a><br>
+        <a href="/workers/atleisti/{{$darb->id_Darbuotojas}}"><button>Atleisti darbuotoją</button></a><br>
         <form class="form-horizontal" role="form" method="POST" action="/workers/redaguoti/{{$darb->id}}/done">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">

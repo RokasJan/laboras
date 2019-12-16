@@ -67,6 +67,12 @@ class WorkersController extends Controller
         return redirect('/workers');
     }
 
+    public function atleisti($darvuotojo_id)
+    {
+        Darbuotojas::where('id_Darbuotojas',$darvuotojo_id)->delete();
+        return redirect('/workers');
+    }
+
     public function store(Request $request)
     {
 
