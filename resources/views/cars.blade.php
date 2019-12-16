@@ -4,6 +4,7 @@
         <h2>Menu</h2>
         <ul>
             <li><a href="/">Pagrindinis</a></li>
+            <li><a href="/cars/add">Pridėti automobilį</a></li>
         </ul>
     </div>
         <div id="contentRight">

@@ -45,4 +45,9 @@ class CarsController extends Controller
         return redirect('/cars');
     }
 
+    public function prideti()
+    {
+        return "Hello :)";
+    }
+
 }

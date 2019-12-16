@@ -38,7 +38,7 @@ class WorkersController extends Controller
                 'fk_Paskyraid_Paskyra'=> $vartotojas->id
             ]);
 
-            Klientas::where('fk_Paskyraid_Paskyra', $vartotojas->id)->delete();
+            //Klientas::where('fk_Paskyraid_Paskyra', $vartotojas->id)->delete();
         }
 
         return redirect('/workers');
