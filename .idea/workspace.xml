@@ -121,24 +121,24 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laboras\app" />
+      <recent name="C:\xampp\htdocs\laboras\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\laboras\app\Http" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laboras\app" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\laboras\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\laboras\app\Http" />
-      <recent name="C:\xampp\htdocs\laboras\app" />
-    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -153,7 +153,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576430823161</updated>
       <workItem from="1576430824666" duration="16583000" />
-      <workItem from="1576493284893" duration="29392000" />
+      <workItem from="1576493284893" duration="31751000" />
     </task>
     <servers />
   </component>
@@ -161,10 +161,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576524971475">
+    <state x="714" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576531346639">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576524971475" />
+    <state x="714" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1576531346639" />
+    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576530414849">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1056" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576530414849" />
     <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1576503215933">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
