@@ -3,19 +3,19 @@
     <div id="contentLeft">
         <h2>Menu</h2>
         <ul>
-            <li><a href="auto_reg.html" class="active">Pridėti automobilį</a></li>
+            <li><a href="/">Pagrindinis</a></li>
         </ul>
     </div>
     <div id="contentRight">
-        <h2 id="pageTitle">Automobiliai</h2>
+        <h2 id="pageTitle">Skundai</h2>
+        @foreach($allSkundai as $skundas)
         <div class="newsItem">
-            <form style="margin-left:50px;">
-                Kam skirtas<br>
-                <input type="text" name="name"><br>
-                Skundas
-                <textarea rows="10" cols="40"></textarea>
-                <p><a href="pagrindinis.html"><button>Išsaugoti</button></a></p>
-            </form>
+            <p class="title"><a>Priezastis: {{ $skundas->priezastis }}</a></p>
+            <p class="description">Informacija: {{ $skundas->informacija }}</p>
+            <p class="description">Data: {{ $skundas->data }}</p>
         </div>
-    </div>
+        @endforeach
+        <br><br><a class="btn btn-primary" style="margin-left: 15px" href="{{route('skund')}}">
+            <span>Pridėti skundą</span>
+        </a>
 @endsection

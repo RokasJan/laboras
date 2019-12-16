@@ -24,6 +24,8 @@ Route::get('/customers', 'CustomersController@index');
 Route::get('/workers', 'WorkersController@index');
 Route::get('/worktime', 'WorkTimeController@index');
 Route::get('/complaint', 'ComplaintController@index');
+Route::get('/addcomplaint', 'ComplaintController@Skundai')->name('skund');
+Route::post('/skundpatvirtinimas', 'ComplaintController@pridejimas')->name('skund_patv');
 Route::get('/individual', 'IndividualController@index');
 Route::get('/testdrive', 'TestdriveController@index');
 Route::get('/tahistory', 'TAhistoryController@index');
