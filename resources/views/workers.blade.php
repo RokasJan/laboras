@@ -4,7 +4,6 @@
         <h2>Pasirinkimai</h2>
         <ul>
             <li><a href="/workers" class="active">Sąrašas</a></li>
-            <li><a href="darbuotojai_red.html">Redagavimas</a></li>
             <li><a href="/workers/register">Registravimas</a></li>
         </ul>
     </div>

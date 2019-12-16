@@ -121,6 +121,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+<<<<<<< HEAD
+=======
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laboras\resources\views" />
+      <recent name="C:\xampp\htdocs\laboras\app" />
+    </key>
+>>>>>>> 4b13adf10d5f53896721354ca59234f943c9078d
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laboras\app" />
       <recent name="C:\xampp\htdocs\laboras\app\Http\Controllers" />
