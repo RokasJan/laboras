@@ -46,3 +46,5 @@ Route::get('/testdrive', 'TestdriveController@index');
 Route::get('/tahistory', 'TAhistoryController@index');
 Route::get('/parts', 'PartsController@index');
 Route::get('/servicecustomers', 'ServicecustomersController@index');
+Route::get('/registruoti', 'ServicecustomersController@reg')->name('registruoti');
+Route::post('/registruotipatv', 'ServicecustomersController@prideti')->name('registruotipat');
