@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Darbuotojas;
+use App\Klientas;
 use Illuminate\Http\Request;
 use App\Http\Requests\PridetiDarbuotoja;
 use Illuminate\Support\Facades\DB;
@@ -29,10 +30,16 @@ class WorkersController extends Controller
             ->where('email', $request->input('pastas'))
             ->first();
 
+        
+
         $naujas = darbuotojas::create([
            'fk_Paskyraid_Paskyra'=> $vartotojas->id
         ]);
+
+        Klientas::where('fk_Paskyraid_Paskyra', $vartotojas->id)->delete();
         return redirect('/workers');
+
+
 
     }
 
