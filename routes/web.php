@@ -26,6 +26,8 @@ Route::get('/customers', 'CustomersController@index');
 Route::get('/workers', 'WorkersController@index');
 Route::get('/workers/register', 'WorkersController@registruoti');
 Route::post('/workers/register/done', 'WorkersController@baigtiRegistruoti');
+Route::get('/workers/redaguoti/{darbuotojo_id}', 'WorkersController@redaguoti');
+Route::post('/workers/redaguoti/{darbuotojo_id}/done', 'WorkersController@baigtiRedaguoti');
 Route::get('/worktime', 'WorkTimeController@index');
 Route::get('/complaint', 'ComplaintController@index');
 Route::get('/addcomplaint', 'ComplaintController@Skundai')->name('skund');
