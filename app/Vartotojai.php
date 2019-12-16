@@ -17,7 +17,7 @@ class Vartotojai extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'vardas','pravarde','email', 'password'
+        'vardas', 'pavarde', 'email', 'password'
     ];
 
     /**

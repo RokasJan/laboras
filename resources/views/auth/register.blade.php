@@ -19,13 +19,13 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('pravarde') ? ' has-error' : '' }}">
-                                <label for="pravarde" class="col-md-4 control-label">Pravardė</label>
+                            <div class="form-group{{ $errors->has('pavarde') ? ' has-error' : '' }}">
+                                <label for="pavarde" class="col-md-4 control-label">Pravardė</label>
                                 <div class="col-md-6">
-                                    <input id="pravarde" type="text" class="form-control" name="pravarde" value="{{ old('pravarde') }}" required autofocus>
-                                    @if ($errors->has('pravarde'))
+                                    <input id="pavarde" type="text" class="form-control" name="pravarde" value="{{ old('pavarde') }}" required autofocus>
+                                    @if ($errors->has('pavarde'))
                                         <span class="help-block">
-<strong>{{ $errors->first('pravarde') }}</strong>
+<strong>{{ $errors->first('pavarde') }}</strong>
 </span>
                                     @endif
                                 </div>

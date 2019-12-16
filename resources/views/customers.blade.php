@@ -1,10 +1,9 @@
 @extends('home')
 @section('contentRight')
     <div id="contentLeft">
-        <h2>Naujienos</h2>
+        <h2>Menu</h2>
         <ul>
-            <li><a href="/cars">Automobiliai</a></li>
-            <li><a href="Greitai.html">Greitai pasirodys</a></li>
+            <li><a href="/">Pagrindinis</a></li>
         </ul>
     </div>
     <div id="contentRight">
@@ -16,16 +15,27 @@
                 <td>Pavardė</td>
                 <td>El. paštas</td>
             </tr>
+            @foreach($allKlientai as $kli)
             <tr>
-                <td>Andrius</td>
-                <td>Andraitis</td>
-                <td>Andrius@email.com</td>
+                @foreach($kli->paskyra as $pask)
+                    <td>{{ $pask->vardas }}</td>
+                    <td>{{ $pask->pavarde }}</td>
+                    <td>{{ $pask->email }}</td>
+                @endforeach
+{{--                <td>{{ $kli->id_Klientas }}</td>--}}
+{{--                <td>{{ $kli->paskyra->email }}</td>--}}
             </tr>
-            <tr>
-                <td>Lukas</td>
-                <td>Lukaitis</td>
-                <td>Lukas@email.com</td>
-            </tr>
+            @endforeach
+{{--            <tr>--}}
+{{--                <td>Andrius</td>--}}
+{{--                <td>Andraitis</td>--}}
+{{--                <td>Andrius@email.com</td>--}}
+{{--            </tr>--}}
+{{--            <tr>--}}
+{{--                <td>Lukas</td>--}}
+{{--                <td>Lukaitis</td>--}}
+{{--                <td>Lukas@email.com</td>--}}
+{{--            </tr>--}}
             </tbody>
         </table>
 

@@ -9,9 +9,26 @@
     </div>
         <div id="contentRight">
             <h2 id="pageTitle">Automobiliai</h2>
-            <div class="newsItem">
-                <br>
-                <table style="margin-left:15px" id = "customers">
+            <div style="margin-left:15px" class="newsItem">
+                <tr>
+                    <td>
+                        <select data-column="0" class="form-control filter-select">
+                            <option value="">Pasirinkite modelį</option>
+                            @foreach($modeliai as $model)
+                                <option value="{{ $model }}">{{ $model }}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <select data-column="0" class="form-control filter-select">
+                            <option value="">Pasirinkite markę</option>
+                            @foreach($markes as $mark)
+                                <option value="{{ $mark }}">{{ $mark }}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                </tr>
+                <table id = "customers">
                     <tr>
                     <th>Modelis</th>
                     <th>Markė</th>
@@ -19,9 +36,7 @@
                     <th>Pavarų dėžės tipas</th>
                     <th>Kuro tipas</th>
                     <th>Kėbulo tipas</th>
-                        <th>Galimi veiksmai</th>
                     </tr>
-{{--                <table style = 'border: 1px solid black;'>--}}
                 @foreach($allCars as $car )
                         <tr>
                     <td>{{ $car->marke }}</td>
@@ -30,25 +45,44 @@
                     <td>{{ $car->pavdez->name}}</td>
                     <td>{{ $car->kurtip->name }}</td>
                     <td>{{ $car->kebtip->name }}</td>
-                    <td><a href="pirkti.html"><button>Pirkti</button></a><a href="registracija_vaz.html"><button>Registruotis vaziavimui</button></a>&nbsp;<a href="komplektacija.html"><button>Komplektuotis automobili</button></a>&nbsp;<a href="auto_red.html"><button>Redaguoti</button></a></td>
+                    <td><a href="auto_red.html"><button>Redaguoti</button></a></td>
                         </tr>
                 @endforeach
                 </table>
-{{--                <p class="title"><a href="#">BMW 2002</a></p>--}}
-{{--                <img src="bmw.jpg" alt="bmw" width="500" height="275">--}}
-{{--                <p class="description">Kaina: 3 barankos</p>--}}
-{{--                <a href="pirkti.html"><button>Pirkti</button></a>--}}
-{{--                <a href="registracija_vaz.html"><button>Registruotis vaziavimui</button></a>--}}
-{{--                <a href="komplektacija.html"><button>Komplektuotis automobili</button></a>--}}
-{{--                <a href="auto_red.html"><button>Redaguoti</button></a>--}}
-{{--            </div>--}}
-{{--            <div class="newsItem">--}}
-{{--                <p class="title"><a href="#">Ferrari Juoda</a></p>--}}
-{{--                <img src="ferrari.jpg" alt="bmw" width="500" height="275">--}}
-{{--                <p class="description">Kaina: 30 barankų</p>--}}
-{{--                <a href="pirkti.html"><button>Pirkti</button></a>--}}
-{{--                <a href="registracija_vaz.html"><button>Registruotis vaziavimui</button></a>--}}
-{{--                <a href="komplektacija.html"><button>Komplektuotis automobili</button></a>--}}
-{{--                <a href="auto_red.html"><button>Redaguoti</button></a>--}}
+                <br>
+                <a href="/buy"><button>Pirkti</button></a>
+                <a href="/registerfortestdrive"><button>Registruotis važiavimui</button></a>&nbsp;
+                <a href="komplektacija.html"><button>Komplektuotis automobilį</button></a>
             </div>
+        </div>
+@endsection
+
+@section('javascripts')
+
+    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.js">
+        $(document).ready(function () {
+            var table = $('#datatable').DataTable({
+                'processing': true,
+                'serverSide': true,
+                'ajax': "{{ route('cars') }}",
+                'columns': [
+                    {'data': 'marke'},
+                    {'data': 'modelis'}
+                ],
+            })
+        });
+
+        // $('.filter-input').keyup(function () {
+        //     table.column( $(this).data('column'))
+        //     .search( $(this).val() )
+        //     .draw();
+        // });
+
+        $('.filter-select').change(function () {
+            table.column( $(this).data('column'))
+                .search( $(this).val() )
+                .draw();
+        });
+    </script>
+
 @endsection

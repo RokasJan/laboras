@@ -2,11 +2,6 @@
 <html>
 <head>
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-    <style>
-        body {
-            background-image: url("/public/images/wallpaper.jpg"); --Image
-        }
-    </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Automasina</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -24,7 +19,6 @@
     </script>
 </head>
 <body>
-<img src="/public/favicon.ico">
 <div id="body">
     <div id="header">
         <h3 id="slogan">Automašina</h3>
@@ -86,7 +80,6 @@
             <h2>Menu</h2>
             <ul>
                 <li><a href="/complaint">Skundu registracija</a></li>
-                <li><a href="Greitai.html">Greitai pasirodys</a></li>
             </ul>
         </div>
         <div id="contentRight">
