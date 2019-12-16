@@ -3,8 +3,7 @@
     <div id="contentLeft">
         <h2>Menu</h2>
         <ul>
-            <li><a href="/cars">Automobiliai</a></li>
-            <li><a href="Greitai.html">Greitai pasirodys</a></li>
+            <li><a href="/">Pagrindinis</a></li>
         </ul>
     </div>
         <div id="contentRight">
@@ -38,7 +37,7 @@
                     <td>{{ $car->pavdez->name}}</td>
                     <td>{{ $car->kurtip->name }}</td>
                     <td>{{ $car->kebtip->name }}</td>
-                    <td><a href="auto_red.html"><button>Redaguoti</button></a></td>
+                    <td><a href="/redaguotiauto/{{ $car->id_Automobilis }}"><button>Redaguoti</button></a></td>
                         </tr>
                 @endforeach
                 </table>
