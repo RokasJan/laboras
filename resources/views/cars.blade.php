@@ -30,6 +30,7 @@
                 </tr>
                 <table id = "customers">
                     <tr>
+                        <th>Numeris</th>
                     <th>Modelis</th>
                     <th>Markė</th>
                     <th>Pagaminta</th>
@@ -39,6 +40,7 @@
                     </tr>
                 @foreach($allCars as $car )
                         <tr>
+                            <td>{{ $car->id_Automobilis }}</td>
                     <td>{{ $car->marke }}</td>
                     <td>{{ $car->modelis }}</td>
                     <td>{{ $car->pagaminimo_data }}</td>
@@ -50,7 +52,7 @@
                 @endforeach
                 </table>
                 <br>
-                <a href="/buy"><button>Pirkti</button></a>
+                <a href="{{route('buy')}}"><button>Pirkti</button></a>
                 <a href="/registerfortestdrive"><button>Registruotis važiavimui</button></a>&nbsp;
                 <a href="komplektacija.html"><button>Komplektuotis automobilį</button></a>
             </div>
