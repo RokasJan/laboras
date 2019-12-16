@@ -13,9 +13,4 @@ class Skundas extends Model
 
     /* nurodome kad  nenaudosime created_at ir updated_at laukų šiame modulyje*/
     public $timestamps = false;
-
-    public function koment()
-    {
-        return $this->belongsTo('App\Klientas', 'fk_Klientasid_Klientas', 'id_Klientas');
-    }
 }

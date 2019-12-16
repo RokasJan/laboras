@@ -14,7 +14,8 @@ class ComplaintController extends Controller
     public function index()
     {
         $allSkundai = Skundas::all();
-        return view('complaint', compact('allSkundai'));
+        $allKlientai = Klientas::all();
+        return view('complaint', compact('allSkundai','allKlientai'));
     }
 
     public function Skundai() //cia eis į kontrolerį
