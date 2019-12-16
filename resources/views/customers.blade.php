@@ -22,6 +22,9 @@
                     <td>{{ $pask->pravarde }}</td>
                     <td>{{ $pask->email }}</td>
                 @endforeach
+                    <td><a class="btn btn-danger" onclick="javascript:return confirm('Do you really want to delete this?')" href="/salinti/{{ $kli->id_Klientas }}" >
+                        <span>Pašalinti</span>
+                    </a></td>
             </tr>
             @endforeach
             </tbody>
