@@ -22,20 +22,8 @@
                     <td>{{ $pask->pravarde }}</td>
                     <td>{{ $pask->email }}</td>
                 @endforeach
-{{--                <td>{{ $kli->id_Klientas }}</td>--}}
-{{--                <td>{{ $kli->paskyra->email }}</td>--}}
             </tr>
             @endforeach
-{{--            <tr>--}}
-{{--                <td>Andrius</td>--}}
-{{--                <td>Andraitis</td>--}}
-{{--                <td>Andrius@email.com</td>--}}
-{{--            </tr>--}}
-{{--            <tr>--}}
-{{--                <td>Lukas</td>--}}
-{{--                <td>Lukaitis</td>--}}
-{{--                <td>Lukas@email.com</td>--}}
-{{--            </tr>--}}
             </tbody>
         </table>
 

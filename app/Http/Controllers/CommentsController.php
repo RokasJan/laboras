@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\pridetikomentara;
+use App\Klientas;
 use App\Komentarai;
 use App\Vartotojai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
@@ -17,22 +19,24 @@ class CommentsController extends Controller
 
     public function Komentaras()
     {
-        $allKlientai= Vartotojai::all();
-        return view('addcomment', compact('allKlientai'));
+        return view('addcomment');
     }
 
     public function pridejimas(pridetikomentara $request)
     {
+        $allKlientai = Klientas::where('fk_Paskyraid_Paskyra', Auth::user()->id)->first();
+        $klientas = $allKlientai->id_Klientas;
+
         Komentarai::Create(
             [
                 'slapyvardis' => $request -> input('slapyvardis'),
-                'komentarai' => $request -> input('turinys'),
+                'komentarai' => $request -> input('komentarai'),
                 'data' => date("Y-m-d"),
-//                'fk_Klientasid_Klientas' => $request -> input('receptas')
+                'fk_Klientasid_Klientas' => $klientas
             ]
         );
 
-        return redirect('/komentarai');
+        return redirect('/comments');
 
     }
 }
