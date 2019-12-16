@@ -15,6 +15,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index');
 Route::get('/cars', 'CarsController@ajax')->name('cars');
+Route::get('/buy', 'SutartisController@index')->name('buy');
+Route::post('/buypatvirtinimas', 'SutartisController@prideti')->name('buypatv');
 Route::get('/map', 'MapController@index');
 Route::get('/comments', 'CommentsController@index');
 Route::get('/addcomment', 'CommentsController@Komentaras')->name('comp');
