@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2019 at 02:14 AM
+-- Generation Time: Dec 16, 2019 at 11:55 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -403,7 +403,7 @@ CREATE TABLE `vadovas` (
 CREATE TABLE `vartotojai` (
   `id` int(10) NOT NULL,
   `vardas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pavarde` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pravarde` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -415,9 +415,10 @@ CREATE TABLE `vartotojai` (
 -- Dumping data for table `vartotojai`
 --
 
-INSERT INTO `vartotojai` (`id`, `vardas`, `pavarde`, `password`, `email`, `remember_token`, `created_at`, `updated_at`) VALUES
+INSERT INTO `vartotojai` (`id`, `vardas`, `pravarde`, `password`, `email`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Rokas', '', '$2y$10$HepXQ0H09rIBB6h6q/o7uOkJyADN4LOkX.Fx0zdmOeXjTzJX4fKg2', 'rokas@rokas.lt', NULL, '2019-12-15 10:20:04', '2019-12-15 10:20:04'),
-(2, 'AHAHAH', 'AHHHHHHH', '$2y$10$tomXhK7oRrEoV25xuAc8KutqwQj2vji2G9Ho0eVwEhH8v77lTFx0S', 'AAAAA@AAAAA.lt', NULL, '2019-12-15 23:05:09', '2019-12-15 23:05:09');
+(2, 'AHAHAH', 'AHHHHHHH', '$2y$10$tomXhK7oRrEoV25xuAc8KutqwQj2vji2G9Ho0eVwEhH8v77lTFx0S', 'AAAAA@AAAAA.lt', NULL, '2019-12-15 23:05:09', '2019-12-15 23:05:09'),
+(3, '111111', '11111', '$2y$10$1ploIvw95uLGHQ0RI9yzdeS6hsjI95iRZU5Mm8Mmdn1XDSsyAwhaW', '1111@111.lt', NULL, '2019-12-16 08:55:04', '2019-12-16 08:55:04');
 
 --
 -- Indexes for dumped tables
@@ -710,7 +711,7 @@ ALTER TABLE `vadovas`
 -- AUTO_INCREMENT for table `vartotojai`
 --
 ALTER TABLE `vartotojai`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

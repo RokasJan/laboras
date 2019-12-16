@@ -19,7 +19,7 @@
             <tr>
                 @foreach($kli->paskyra as $pask)
                     <td>{{ $pask->vardas }}</td>
-                    <td>{{ $pask->pavarde }}</td>
+                    <td>{{ $pask->pravarde }}</td>
                     <td>{{ $pask->email }}</td>
                 @endforeach
 {{--                <td>{{ $kli->id_Klientas }}</td>--}}
