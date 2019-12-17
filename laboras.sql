@@ -63,7 +63,7 @@ CREATE TABLE `automobilis` (
   `pavaru_deze` int(2) NOT NULL,
   `kuro_tipas` int(2) NOT NULL,
   `kebulas` int(2) NOT NULL,
-  `id_Automobilis` int(10) NOT NULL,
+  `id_Automobilis` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
