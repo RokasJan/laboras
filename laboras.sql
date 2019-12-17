@@ -70,9 +70,9 @@ CREATE TABLE `automobilis` (
 -- Dumping data for table `automobilis`
 --
 
-INSERT INTO `automobilis` (`marke`, `modelis`, `pagaminimo_data`, `vietu_skaicius`, `modifikacija`, `pozymis`, `pavaru_deze`, `kuro_tipas`, `kebulas`, `id_Automobilis`, `kaina`) VALUES
-('Audi', 'A3', '2010-12-02', 4, NULL, 0, 1, 1, 1, 1, 1000),
-('Audi', 'A6', '2016-12-15', 4, '', 0, 2, 1, 1, 2, 10000);
+INSERT INTO `automobilis` (`marke`, `modelis`, `pagaminimo_data`, `vietu_skaicius`, `modifikacija`, `pozymis`, `pavaru_deze`, `kuro_tipas`, `kebulas`, `id_Automobilis`) VALUES
+('Audi', 'A3', '2010-12-02', 4, NULL, 0, 1, 1, 1, 1),
+('Audi', 'A6', '2016-12-15', 4, '', 0, 2, 1, 1, 2);
 
 -- --------------------------------------------------------
 
