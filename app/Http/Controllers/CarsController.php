@@ -47,7 +47,27 @@ class CarsController extends Controller
 
     public function prideti()
     {
-        return "Hello :)";
+        $pavaruDeze = DB::table('pavaru_dezes')->get();
+        $kuroTipas = DB::table('kuro_tipas')->get();
+        $kebuloTipas = DB::table('kebulu_tipai')->get();
+        return view('cars_add', compact('pavaruDeze', 'kuroTipas', 'kebuloTipas'));
+    }
+
+    public function baigtiPrideti(Request $request)
+    {
+
+        cars::create([
+            'marke'=>$request->input('marke'),
+            'modelis'=>$request->input('modelis'),
+            'pagaminimo_data'=>$request->input('data'),
+            'vietu_skaicius'=>$request->input('vietos'),
+            'pavaru_deze'=>$request->input('pavaros'),
+            'kuro_tipas'=>$request->input('kuras'),
+            'kebulas'=>$request->input('kebulas'),
+            'pozymis'=>0
+
+        ]);
+        return redirect('/cars');
     }
 
 }
