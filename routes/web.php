@@ -28,6 +28,7 @@ Route::get('/comments', 'CommentsController@index');
 Route::get('/addcomment', 'CommentsController@Komentaras')->name('comp');
 Route::post('/compatvirtinimas', 'CommentsController@pridejimas')->name('patv');
 Route::get('/contracts', 'ContractsController@index');
+Route::post('/moketi/{id_Sutartis}', 'SutartisController@patvirtinimas')->name('patvirtinumokejima');
 Route::get('/customers', 'CustomersController@index');
 Route::get('/salinti/{id_Klientas}', 'CustomersController@istrynimas')->name('klientdel');
 Route::get('/workers', 'WorkersController@index');
