@@ -13,10 +13,20 @@
     <div class="newsItem">
         <p class="title"><a>Sutarties Nr.: {{ $sut->id_Sutartis }}</a></p>
         <p class="description">Automobilio informacija: Markė - {{ $sut->automob->marke }}, Modelis - {{ $sut->automob->marke }}, Pagaminimo data - {{ $sut->automob->pagaminimo_data }}, Vietų skaičius - {{ $sut->automob->vietu_skaicius }},
-            Modifikacija - {{ $sut->automob->modifikacija }}, Busena - {{ $sut->busena }}.</p>
-        <p><a href="https://www.paypal.com/lt/home"><button>Mokėti</button></a></p>
-    </div>
+            Modifikacija - {{ $sut->automob->modifikacija }},
+            Busena -
+            @if($sut->busena == 0)
+            Neapmokėta
+            @else
+                Apmokėta
+            @endif.</p>
+        <p><a onclick="javascript:return confirm('Ar norite sumokėti?')" href="/moketi/{{ $sut->id_Sutartis }}"><button>Mokėti</button></a></p>
+{{--    </div>--}}
+{{--        <td><a class="btn btn-danger" onclick="javascript:return confirm('Do you really want to delete this?')" href="/moketi/{{ $sut->id_Sutartis }}" >--}}
+{{--                <span>Mokėti</span>--}}
+{{--            </a></td>--}}
     @endforeach
+    </div>
     </div>
 {{--    <div class="newsItem">--}}
 {{--        <p class="title"><a href="#">BMW 2002</a></p>--}}

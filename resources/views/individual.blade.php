@@ -4,23 +4,22 @@
         <h2>Naujienos</h2>
         <ul>
             <li><a href="/cars">Automobiliai</a></li>
-            <li><a href="Greitai.html">Greitai pasirodys</a></li>
         </ul>
     </div>
     <div id="contentRight">
         <h2 id="pageTitle">Užsakymai</h2>
+        @foreach($allUzsakymai as $uzs)
         <div class="newsItem">
-            <p class="title"><a href="#">Jonas Prancyškus</a></p>
-            <p class="description">Noriu galingesnio variklio ir stoglangio</p>
+            <p class="description">Norima komplektacija - {{ $uzs->automobilio_komplektacija }}</p>
+            <p class="description">Būsena -
+                @if( $uzs->busena == 0)
+                    Nepatvirtinta
+                @else
+                    Patvirtinta
+                @endif</p>
             <p><button>Patvirtinti</button></p>
             <p><button>Atšaukti</button></p>
         </div>
-        <div class="newsItem">
-            <p class="title"><a href="#">Barakas Obama</a></p>
-            <p class="description">Noriu raudono ferrario su zaliu stogu</p>
-            <p><button>Patvirtinti</button></p>
-            <p><button>Atšaukti</button></p>
-        </div>
-    </div>
+        @endforeach
     </div>
 @endsection

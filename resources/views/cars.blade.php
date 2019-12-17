@@ -3,8 +3,8 @@
     <div id="contentLeft">
         <h2>Menu</h2>
         <ul>
-            <li><a href="/cars">Automobiliai</a></li>
-            <li><a href="Greitai.html">Greitai pasirodys</a></li>
+            <li><a href="/">Pagrindinis</a></li>
+            <li><a href="/cars/add">Pridėti automobilį</a></li>
         </ul>
     </div>
         <div id="contentRight">
@@ -12,19 +12,10 @@
             <div style="margin-left:15px" class="newsItem">
                 <tr>
                     <td>
-                        <select data-column="0" class="form-control filter-select">
-                            <option value="">Pasirinkite modelį</option>
-                            @foreach($modeliai as $model)
-                                <option value="{{ $model }}">{{ $model }}</option>
-                            @endforeach
-                        </select>
-                    </td>
-                    <td>
-                        <select data-column="0" class="form-control filter-select">
+                        <select name="filter" data-column="0" class="form-control filter-select">
                             <option value="">Pasirinkite markę</option>
-                            @foreach($markes as $mark)
-                                <option value="{{ $mark }}">{{ $mark }}</option>
-                            @endforeach
+                                <option value="Audi">Audi</option>
+                                <option value="BMW">BMW</option>
                         </select>
                     </td>
                 </tr>
@@ -47,44 +38,14 @@
                     <td>{{ $car->pavdez->name}}</td>
                     <td>{{ $car->kurtip->name }}</td>
                     <td>{{ $car->kebtip->name }}</td>
-                    <td><a href="auto_red.html"><button>Redaguoti</button></a></td>
+                    <td><a href="/redaguotiauto/{{ $car->id_Automobilis }}"><button>Redaguoti</button></a></td>
                         </tr>
                 @endforeach
                 </table>
                 <br>
                 <a href="{{route('buy')}}"><button>Pirkti</button></a>
-                <a href="/registerfortestdrive"><button>Registruotis važiavimui</button></a>&nbsp;
-                <a href="komplektacija.html"><button>Komplektuotis automobilį</button></a>
+                <a href="{{route('reg')}}"><button>Registruotis važiavimui</button></a>&nbsp;
+                <a href="{{route('komplekt')}}"><button>Komplektuotis automobilį</button></a>
             </div>
         </div>
-@endsection
-
-@section('javascripts')
-
-    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.js">
-        $(document).ready(function () {
-            var table = $('#datatable').DataTable({
-                'processing': true,
-                'serverSide': true,
-                'ajax': "{{ route('cars') }}",
-                'columns': [
-                    {'data': 'marke'},
-                    {'data': 'modelis'}
-                ],
-            })
-        });
-
-        // $('.filter-input').keyup(function () {
-        //     table.column( $(this).data('column'))
-        //     .search( $(this).val() )
-        //     .draw();
-        // });
-
-        $('.filter-select').change(function () {
-            table.column( $(this).data('column'))
-                .search( $(this).val() )
-                .draw();
-        });
-    </script>
-
 @endsection

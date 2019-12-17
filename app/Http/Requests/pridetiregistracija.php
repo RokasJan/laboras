@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class pridetiSkunda extends FormRequest
+class pridetiregistracija extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class pridetiSkunda extends FormRequest
     public function rules()
     {
         return [
-            'priezastis' => 'required|min:3|max:3000',
-            'informacija' => 'required|min:3|max:3000',
+            'data' => 'required',
+           // 'vieta ' => 'required|min:3|max:1000',
         ];
     }
 }

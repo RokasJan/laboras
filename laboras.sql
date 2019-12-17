@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2019 at 06:58 PM
+-- Generation Time: Dec 17, 2019 at 12:38 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -36,13 +36,6 @@ CREATE TABLE `atsiliepimas` (
   `fk_Klientasid_Klientas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `atsiliepimas`
---
-
-INSERT INTO `atsiliepimas` (`slapyvardis`, `komentarai`, `data`, `id_Atsiliepimas`, `fk_Klientasid_Klientas`) VALUES
-('ASDASD', 'ASDASD', '2019-12-16', 6, 3);
-
 -- --------------------------------------------------------
 
 --
@@ -71,7 +64,6 @@ CREATE TABLE `automobilis` (
   `kuro_tipas` int(2) NOT NULL,
   `kebulas` int(2) NOT NULL,
   `id_Automobilis` int(10) NOT NULL,
-  `kaina` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -79,7 +71,7 @@ CREATE TABLE `automobilis` (
 --
 
 INSERT INTO `automobilis` (`marke`, `modelis`, `pagaminimo_data`, `vietu_skaicius`, `modifikacija`, `pozymis`, `pavaru_deze`, `kuro_tipas`, `kebulas`, `id_Automobilis`, `kaina`) VALUES
-('Audi', 'A3', '2010-12-02', 4, '', 0, 2, 2, 2, 1, 1000),
+('Audi', 'A3', '2010-12-02', 4, NULL, 0, 1, 1, 1, 1, 1000),
 ('Audi', 'A6', '2016-12-15', 4, '', 0, 2, 1, 1, 2, 10000);
 
 -- --------------------------------------------------------
@@ -189,9 +181,7 @@ CREATE TABLE `klientas` (
 --
 
 INSERT INTO `klientas` (`id_Klientas`, `fk_Paskyraid_Paskyra`) VALUES
-(1, 1),
-(2, 2),
-(3, 3);
+(10, 1);
 
 -- --------------------------------------------------------
 
@@ -290,13 +280,18 @@ INSERT INTO `pavaru_dezes` (`id_Pavaru_dezes`, `name`) VALUES
 
 CREATE TABLE `registracija` (
   `data` date NOT NULL,
-  `laikas` time NOT NULL,
   `vieta` varchar(50) NOT NULL,
   `priezastis` text NOT NULL,
   `id_Registracija` int(10) NOT NULL,
-  `fk_Klientasid_Klientas` int(11) NOT NULL,
-  `fk_Automechanikasid_Automechanikas` int(11) NOT NULL
+  `fk_Klientasid_Klientas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `registracija`
+--
+
+INSERT INTO `registracija` (`data`, `vieta`, `priezastis`, `id_Registracija`, `fk_Klientasid_Klientas`) VALUES
+('2019-12-18', 'Kaunas', 'Šiaip pasitikrint', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -306,15 +301,19 @@ CREATE TABLE `registracija` (
 
 CREATE TABLE `rezervacija` (
   `data` date NOT NULL,
-  `laikas_nuo` time NOT NULL,
-  `laikas_iki` time NOT NULL,
   `vieta` varchar(40) NOT NULL,
   `busena` tinyint(1) DEFAULT NULL,
   `id_Rezervacija` int(10) NOT NULL,
   `fk_Klientasid_Klientas` int(11) NOT NULL,
-  `fk_Automobilisid_Automobilis` int(11) NOT NULL,
-  `fk_Darbuotojasid_Darbuotojas` int(11) NOT NULL
+  `fk_Automobilisid_Automobilis` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `rezervacija`
+--
+
+INSERT INTO `rezervacija` (`data`, `vieta`, `busena`, `id_Rezervacija`, `fk_Klientasid_Klientas`, `fk_Automobilisid_Automobilis`) VALUES
+('2019-12-19', 'Vilnius', 0, 2, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -327,8 +326,7 @@ CREATE TABLE `skundas` (
   `informacija` text NOT NULL,
   `data` date NOT NULL,
   `id_Skundas` int(10) NOT NULL,
-  `fk_Klientasid_Klientas` int(11) NOT NULL,
-  `fk_Darbuotojasid_Darbuotojas` int(11) NOT NULL
+  `fk_Klientasid_Klientas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -349,9 +347,7 @@ CREATE TABLE `sutartis` (
 --
 
 INSERT INTO `sutartis` (`id_Sutartis`, `fk_Automobilisid_Automobilis`, `fk_Klientasid_Klientas`, `busena`) VALUES
-(1, 1, 1, 0),
-(2, 1, 1, 0),
-(3, 2, 1, 0);
+(5, 1, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -366,6 +362,14 @@ CREATE TABLE `ta` (
   `id_TA` int(10) NOT NULL,
   `fk_Klientasid_Klientas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ta`
+--
+
+INSERT INTO `ta` (`Data`, `Problema`, `Automobilio_Valst_Nr`, `id_TA`, `fk_Klientasid_Klientas`) VALUES
+('2019-12-16', 'Neveikia rankinis stabdis', 'LTE-446', 1, 10),
+('2019-12-11', 'Subyrėjęs šarnyras', 'DFG-123', 2, 10);
 
 -- --------------------------------------------------------
 
@@ -397,6 +401,14 @@ CREATE TABLE `uzsakymas` (
   `fk_Klientasid_Klientas` int(11) NOT NULL,
   `fk_Automobilisid_Automobilis` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `uzsakymas`
+--
+
+INSERT INTO `uzsakymas` (`id_Uzsakymas`, `automobilio_komplektacija`, `busena`, `fk_Klientasid_Klientas`, `fk_Automobilisid_Automobilis`) VALUES
+(1, 'asdasdsad', 0, 10, 1),
+(2, 'Noriu, kad patronikai būtų', 0, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -544,8 +556,7 @@ ALTER TABLE `pavaru_dezes`
 --
 ALTER TABLE `registracija`
   ADD PRIMARY KEY (`id_Registracija`),
-  ADD KEY `krepiasi_del` (`fk_Klientasid_Klientas`),
-  ADD KEY `atlieka` (`fk_Automechanikasid_Automechanikas`);
+  ADD KEY `krepiasi_del` (`fk_Klientasid_Klientas`);
 
 --
 -- Indexes for table `rezervacija`
@@ -553,16 +564,14 @@ ALTER TABLE `registracija`
 ALTER TABLE `rezervacija`
   ADD PRIMARY KEY (`id_Rezervacija`),
   ADD KEY `pateikia1` (`fk_Klientasid_Klientas`),
-  ADD KEY `priskirtas1` (`fk_Automobilisid_Automobilis`),
-  ADD KEY `patvirtina1` (`fk_Darbuotojasid_Darbuotojas`);
+  ADD KEY `priskirtas1` (`fk_Automobilisid_Automobilis`);
 
 --
 -- Indexes for table `skundas`
 --
 ALTER TABLE `skundas`
   ADD PRIMARY KEY (`id_Skundas`),
-  ADD KEY `pateikia` (`fk_Klientasid_Klientas`),
-  ADD KEY `registruoja` (`fk_Darbuotojasid_Darbuotojas`);
+  ADD KEY `pateikia` (`fk_Klientasid_Klientas`);
 
 --
 -- Indexes for table `sutartis`
@@ -658,7 +667,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `klientas`
 --
 ALTER TABLE `klientas`
-  MODIFY `id_Klientas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_Klientas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -676,31 +685,31 @@ ALTER TABLE `pakaitinis_automobilis`
 -- AUTO_INCREMENT for table `registracija`
 --
 ALTER TABLE `registracija`
-  MODIFY `id_Registracija` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_Registracija` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `rezervacija`
 --
 ALTER TABLE `rezervacija`
-  MODIFY `id_Rezervacija` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_Rezervacija` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `skundas`
 --
 ALTER TABLE `skundas`
-  MODIFY `id_Skundas` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_Skundas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sutartis`
 --
 ALTER TABLE `sutartis`
-  MODIFY `id_Sutartis` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_Sutartis` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ta`
 --
 ALTER TABLE `ta`
-  MODIFY `id_TA` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_TA` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -712,7 +721,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `uzsakymas`
 --
 ALTER TABLE `uzsakymas`
-  MODIFY `id_Uzsakymas` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_Uzsakymas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vadovas`
@@ -788,7 +797,6 @@ ALTER TABLE `pakaitinis_automobilis`
 -- Constraints for table `registracija`
 --
 ALTER TABLE `registracija`
-  ADD CONSTRAINT `atlieka` FOREIGN KEY (`fk_Automechanikasid_Automechanikas`) REFERENCES `automechanikas` (`id_Automechanikas`),
   ADD CONSTRAINT `krepiasi_del` FOREIGN KEY (`fk_Klientasid_Klientas`) REFERENCES `klientas` (`id_Klientas`);
 
 --
@@ -796,15 +804,13 @@ ALTER TABLE `registracija`
 --
 ALTER TABLE `rezervacija`
   ADD CONSTRAINT `pateikia1` FOREIGN KEY (`fk_Klientasid_Klientas`) REFERENCES `klientas` (`id_Klientas`),
-  ADD CONSTRAINT `patvirtina1` FOREIGN KEY (`fk_Darbuotojasid_Darbuotojas`) REFERENCES `darbuotojas` (`id_Darbuotojas`),
   ADD CONSTRAINT `priskirtas1` FOREIGN KEY (`fk_Automobilisid_Automobilis`) REFERENCES `automobilis` (`id_Automobilis`);
 
 --
 -- Constraints for table `skundas`
 --
 ALTER TABLE `skundas`
-  ADD CONSTRAINT `pateikia` FOREIGN KEY (`fk_Klientasid_Klientas`) REFERENCES `klientas` (`id_Klientas`),
-  ADD CONSTRAINT `registruoja` FOREIGN KEY (`fk_Darbuotojasid_Darbuotojas`) REFERENCES `darbuotojas` (`id_Darbuotojas`);
+  ADD CONSTRAINT `pateikia` FOREIGN KEY (`fk_Klientasid_Klientas`) REFERENCES `klientas` (`id_Klientas`);
 
 --
 -- Constraints for table `sutartis`
