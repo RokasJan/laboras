@@ -4,10 +4,49 @@
         <h2>Naujienos</h2>
         <ul>
             <li><a href="/cars">Automobiliai</a></li>
-            <li><a href="Greitai.html">Greitai pasirodys</a></li>
+            
         </ul>
     </div>
     <div id="contentRight">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73431.63992977327!2d23.857224393500676!3d54.889954858705025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e72270b167d343%3A0x614bd1e0c7378bbc!2sKaunas!5e0!3m2!1sen!2slt!4v1572896364799!5m2!1sen!2slt" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Salonų žemėlapiai</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 54.905448, lng: 23.950773};
+  var uni1 = {lat: 54.899306, lng: 23.912407};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 15, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+  var marker2 = new google.maps.Marker({position: uni1, map: map});
+
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASYtIL9d8XSXAxRsQXtdkkj0ug8VhBWLE&callback=initMap">
+    </script>
+  </body>
+</html>
     </div>
 @endsection
