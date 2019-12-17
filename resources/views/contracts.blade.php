@@ -20,8 +20,11 @@
             @else
                 Apmokėta
             @endif.</p>
-        <p><a href="https://www.paypal.com/lt/home"><button>Mokėti</button></a></p>
-    </div>
+        <p><a onclick="javascript:return confirm('Ar norite sumokėti?')" href="/moketi/{{ $sut->id_Sutartis }}"><button>Mokėti</button></a></p>
+{{--    </div>--}}
+{{--        <td><a class="btn btn-danger" onclick="javascript:return confirm('Do you really want to delete this?')" href="/moketi/{{ $sut->id_Sutartis }}" >--}}
+{{--                <span>Mokėti</span>--}}
+{{--            </a></td>--}}
     @endforeach
     </div>
 {{--    <div class="newsItem">--}}

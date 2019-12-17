@@ -31,4 +31,14 @@ class SutartisController extends Controller
 
         return redirect('/contracts');
     }
+
+    public function patvirtinimas($id_Sutartis)
+    {
+        Sutartis::where('id_Sutartis',$id_Sutartis)->update(
+            [
+                'busena' => '1'
+            ]
+        );
+        return redirect('/contracts');
+    }
 }
