@@ -101,6 +101,8 @@
                             </div>
                         </div>
                     </form>
+                    <br><br>
+                    <a href="/redaguotiauto/{{$automobilis->id_Automobilis}}/trinti"><button>Trinti automobilį</button></a><br>
                 </div>
             </div>
         </div>

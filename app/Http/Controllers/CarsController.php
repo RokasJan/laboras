@@ -70,4 +70,10 @@ class CarsController extends Controller
         return redirect('/cars');
     }
 
+    public function trinti($id_Automobilis)
+    {
+        cars::where('id_Automobilis', $id_Automobilis)->delete();
+        return redirect('/cars');
+    }
+
 }

@@ -24,6 +24,7 @@ Route::post('/registerfortestdrivepatv', 'TestdriveController@pridejimas')->name
 Route::get('/komplektuotis', 'UzsakymasController@index')->name('komplekt');
 Route::post('/komplektpatv', 'UzsakymasController@prideti')->name('komplektpatv');
 Route::get('/redaguotiauto/{id_Automobilis}', 'CarsController@redagavimas')->name('redaguot');
+Route::get('/redaguotiauto/{id_Automobilis}/trinti', 'CarsController@trinti');
 Route::post('/redaguotipatv/{id_Automobilis}', 'CarsController@patvirtinimas')->name('redaguotpatv');
 Route::get('/map', 'MapController@index');
 Route::get('/comments', 'CommentsController@index');
