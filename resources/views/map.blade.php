@@ -4,7 +4,6 @@
         <h2>Naujienos</h2>
         <ul>
             <li><a href="/cars">Automobiliai</a></li>
-            <li><a href="Greitai.html">Greitai pasirodys</a></li>
         </ul>
     </div>
     <div id="contentRight">

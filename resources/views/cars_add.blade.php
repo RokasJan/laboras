@@ -35,12 +35,12 @@
                     <p><input type="text" class="form-control" name="vietos" value="{{old('vietos')}}"></p>
                 </div>
             </div>
-            <div class="form-group">
-                <p> <label class="col-md-4 control-label">Kaina:</label></p>
-                <div class="col-md-12">
-                    <p><input type="number" step="0.01" class="form-control" name="kaina" value="{{old('kaina')}}"></p>
-                </div>
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <p> <label class="col-md-4 control-label">Kaina:</label></p>--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <p><input type="number" step="0.01" class="form-control" name="kaina" value="{{old('kaina')}}"></p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="form-group">
                 <p> <label class="col-md-4 control-label"></label>Pavarų dėžė:</p>
                 <div style="margin-left:15px" class="col-md-12">

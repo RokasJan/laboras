@@ -27,6 +27,7 @@
 {{--            </a></td>--}}
     @endforeach
     </div>
+    </div>
 {{--    <div class="newsItem">--}}
 {{--        <p class="title"><a href="#">BMW 2002</a></p>--}}
 {{--        <img src="bmw.jpg" alt="bmw" width="500" height="275">--}}

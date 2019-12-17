@@ -8,7 +8,7 @@
     </div>
     <div id="contentRight">
         @auth
-            <h2 class="align">Pridėkite komentarą </h2>
+            <h2 class="align">Registruotis bandomajam važiavimui </h2>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -51,7 +51,7 @@
                                     <div class="col-md-12 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary">
                                             <span class="glyphicon glyphicon-refresh"></span>
-                                            Pridėti
+                                            Registruotis
                                         </button>
                                     </div>
                                 </div>

@@ -3,7 +3,7 @@
 <div id="contentLeft">
     <h2>Menu</h2>
     <ul>
-        <li><a href="{{ 'registruoti' }}" class="active">Užregistruoti klientą servisui</a></li>
+        <li><a href="{{ 'registruoti' }}" class="active">Užsiregistruoti servisui</a></li>
         <li><a href="priskirti_auto.html" class="active">Priskirti automobili klientui</a></li>
     </ul>
 </div>
